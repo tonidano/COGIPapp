@@ -2,19 +2,17 @@
 try {
     // On se connecte à MySQL
     $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
+    $id = $_GET['id'];
+    $resultat = $bd->query("SELECT * FROM facture JOIN annuaire ON facture.annuaire_idannuaire = annuaire.idannuaire WHERE idfacture=$id");
 
-    $resultat = $bd->query('SELECT * FROM facture');
     $donnees = $resultat->fetch();
-    // $donnees='';
 } catch (Exception $e) {
     // En cas d'erreur, on affiche un message et on arrête tout
     die('Erreur : '.$e->getMessage());
 }
-// $reponse->closeCursor();
+
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -31,26 +29,24 @@ try {
 
           <th>Numéro</th>
           <th>Date</th>
-          <th>Société</th>
-          <th>Type société</th>
+          <!-- <th>Société</th> -->
+          <!-- <th>Type société</th> -->
           <th>Personne de contact</th>
 
 
-        <?php {
-    ?>
+
 
           <tr>
             <td><?= $donnees['numero']; ?></td>
             <td><?= $donnees['date_facture']; ?></td>
-            <td><?= $donnees['societes_idsocietes']; ?></td>
-            <td><?= $donnees['type_idtype']; ?></td>
-            <td><?= $donnees['annuaire_idannuaire']; ?></td>
+            <!-- <td><?= $donnees['societes_idsocietes']; ?></td>
+            <td><?= $donnees['type_idtype']; ?></td> -->
+            <td><?= $donnees['nom']; ?></td>
+
 
 
           </tr>
 
-      <?php
-} ?>
 
 
     </table>

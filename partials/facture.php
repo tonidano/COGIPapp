@@ -33,13 +33,16 @@ try {
           <th>Date</th>
           <th>Prestation</th>
 
+
         <?php while ($donnees= $resultat ->fetch()) {
     ?>
 
           <tr>
-            <td> <a href="./detailfacture.php?id=<?= $donnees['numero']; ?>" ><?= $donnees['numero']; ?></a></td>
+            <td> <a href="./detailfacture.php?id=<?= $donnees['idfacture']; ?>" ><?= $donnees['numero']; ?></a></td>
             <td><?= $donnees['date_facture']; ?></td>
             <td><?= $donnees['motif_prestation']; ?></td>
+          
+
 
 
           </tr>
