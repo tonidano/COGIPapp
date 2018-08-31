@@ -83,6 +83,7 @@ try {
             <td><a href="./partials/updatesociete.php?id=<?= $donnees3['idsocietes']; ?>"><?= $donnees3['nom_societe']; ?></a></td>
             <td><?= $donnees3['telephone_societe']; ?></td>
             <td><?= $donnees3['type']; ?></td>
+            <td><button>test</button></td>
           </tr>
       <?php
     } ?>
