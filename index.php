@@ -1,28 +1,52 @@
+
+<?php
+
+// $idArticle = '';
+//
+
+// switch ($_GET['page']) {
+//         case 'client':
+//           require "./partials/client.php";
+//         break;
+//         case 'facture':
+//           require "./partials/facture.php";
+//         break;
+//
+//
+//
+//     default:
+//         // afficher la home page
+//     echo "Home page";
+//         break;
+// }
+
+ ?>
+
 <?php
 try {
-    // On se connecte à MySQL
-    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
+     // On se connecte à MySQL
+     $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
 
-    $resultat1 = $bd->query('SELECT *
+     $resultat1 = $bd->query('SELECT *
       FROM facture
       JOIN societes ON facture.societes_idsocietes = societes.idsocietes
       ORDER BY date_facture DESC LIMIT 0,5');
-    $resultat2 = $bd->query('SELECT *
+     $resultat2 = $bd->query('SELECT *
       FROM annuaire_has_societes
       LEFT JOIN societes ON annuaire_has_societes.societes_idsocietes = societes.idsocietes
       LEFT JOIN annuaire ON annuaire.idannuaire = annuaire_has_societes.annuaire_idannuaire
       ORDER BY idannuaire DESC LIMIT 0,5');
-    $resultat3 = $bd->query('SELECT *
+     $resultat3 = $bd->query('SELECT *
        FROM societes JOIN type ON societes.type_idtype = type.idtype
        ORDER BY idsocietes DESC LIMIT 0,5');
-    // $donnees = $resultat->fetch();
-    $donnees1='';
-    $donnees2='';
-    $donnees3='';
-} catch (Exception $e) {
-    // En cas d'erreur, on affiche un message et on arrête tout
-    die('Erreur : '.$e->getMessage());
-}
+     // $donnees = $resultat->fetch();
+     $donnees1='';
+     $donnees2='';
+     $donnees3='';
+ } catch (Exception $e) {
+     // En cas d'erreur, on affiche un message et on arrête tout
+     die('Erreur : '.$e->getMessage());
+ }
 // $reponse->closeCursor();
 
 ?>
@@ -48,6 +72,7 @@ try {
             <td><a href="./partials/updatefacture.php?id=<?= $donnees1['idfacture']; ?>"><?= $donnees1['numero']; ?></a></td>
             <td><?= $donnees1['date_facture']; ?></td>
             <td><a href="./partials/updatesociete.php?id=<?= $donnees1['idsocietes']; ?>"><?= $donnees1['nom_societe']; ?></a></td>
+            <td> <input type="submit" name="supprimer" value="Supprimer" onclick="deleteligne(<?= $donnees1['idfacture']; ?>)"> </td>
           </tr>
       <?php
 } ?>
@@ -88,5 +113,17 @@ try {
     } ?>
 
     </table>
+
+    <script>
+
+    function deleteligne(id){
+
+    document.location.href = "./partials/deletefacture.php?id=" + id;
+    }
+
+
+
+    </script>
   </body>
+
 </html>
