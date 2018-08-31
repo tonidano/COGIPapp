@@ -1,9 +1,8 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8','root','12345678');
+    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', ' ');
     $id=$_GET['id'];
-    $reponse =  $bdd->query
-    ("SELECT *
+    $reponse =  $bdd->query("SELECT *
       -- FROM annuaire_has_societes
       -- LEFT JOIN societes
       -- ON annuaire_has_societes.societes_idsocietes = societes.idsocietes
@@ -16,7 +15,7 @@ try {
       LEFT JOIN annuaire ON facture.annuaire_idannuaire = annuaire.idannuaire
 
       WHERE idannuaire=$id");
-      $donnees = $reponse->fetch();
+    $donnees = $reponse->fetch();
 } catch (Exception $e) {
     die('Erreur : '.$e->getMessage());
 }
