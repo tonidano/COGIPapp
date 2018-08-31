@@ -105,7 +105,7 @@ try {
         <?php while ($donnees3= $resultat3 ->fetch()) {
         ?>
           <tr>
-            <td><?= $donnees3['nom_societe']; ?></td>
+            <td><a href="./partials/updatesociete.php?id=<?= $donnees3['idsocietes']; ?>"><?= $donnees3['nom_societe']; ?></a></td>
             <td><?= $donnees3['telephone_societe']; ?></td>
             <td><?= $donnees3['type']; ?></td>
           </tr>
