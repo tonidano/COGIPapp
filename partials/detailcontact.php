@@ -1,6 +1,6 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8','root','12345678');
+    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8','root','');
     $id=$_GET['id'];
     $reponse =  $bdd->query
     ("SELECT *
@@ -9,7 +9,7 @@ try {
       -- ON annuaire_has_societes.societes_idsocietes = societes.idsocietes
       -- LEFT JOIN annuaire
       -- ON annuaire.idannuaire = annuaire_has_societes.annuaire_idannuaire
-      -- WHERE idannuaire=$id;
+      -- WHERE $id=idannuaire;
 
       FROM facture
       LEFT JOIN societes ON facture.societes_idsocietes = societes.idsocietes
