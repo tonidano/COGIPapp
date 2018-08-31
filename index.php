@@ -11,6 +11,9 @@
 //         case 'facture':
 //           require "./partials/facture.php";
 //         break;
+//         case 'societes':
+//           require "./partials/societe.php";
+//         break;
 //
 //
 //
@@ -56,6 +59,8 @@ try {
   <head>
     <meta charset="utf-8">
     <title>Accueil</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
 
   </head>
 <body>
@@ -72,11 +77,13 @@ try {
             <td><a href="./partials/updatefacture.php?id=<?= $donnees1['idfacture']; ?>"><?= $donnees1['numero']; ?></a></td>
             <td><?= $donnees1['date_facture']; ?></td>
             <td><a href="./partials/updatesociete.php?id=<?= $donnees1['idsocietes']; ?>"><?= $donnees1['nom_societe']; ?></a></td>
-            <td> <input type="submit" name="supprimer" value="Supprimer" onclick="deleteligne(<?= $donnees1['idfacture']; ?>)"> </td>
+            <td> <button type="submit" name="supprimer" onclick="deleteligne(<?= $donnees1['idfacture']; ?>)" ><i class="fas fa-trash-alt"></i></button> </td>
           </tr>
       <?php
 } ?>
+
     </table>
+    <input type="submit" name="ajouter" value="Ajouter" onclick="ajouterligne()">
     <h1>Personnes</h1>
     <table>
           <th>Nom</th>
@@ -119,6 +126,11 @@ try {
     function deleteligne(id){
 
     document.location.href = "./partials/deletefacture.php?id=" + id;
+    }
+
+    function ajouterligne(id){
+
+    document.location.href = "./partials/ajoutfacture.php?id=" + id;
     }
 
 
