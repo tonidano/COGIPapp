@@ -1,6 +1,6 @@
 <?php
 try {
-    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '12345678');
+    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
     if (!isset($_POST['button'])) {
         $id = $_GET['id'];
         $resultat = $bd->query("SELECT * FROM annuaire WHERE idannuaire = $id");
@@ -36,7 +36,7 @@ try {
 <body>
   	<a href="../index.php">Accueil</a>
         <?php if (!isset($_POST['button'])) {
-           ?>
+    ?>
 	  <h1>Modifier</h1>
         <form action="update_client.php" method="post">
         		<div>
@@ -63,9 +63,9 @@ try {
         		<button type="submit" name="button">Modifier</button>
         </form>
 <?php
-    } else {
-    echo $confirm;
-} ?>
+} else {
+        echo $confirm;
+    } ?>
 
 </body>
 </html>

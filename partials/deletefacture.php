@@ -11,7 +11,7 @@ try {
     $query = "DELETE FROM facture WHERE idfacture= $id";
 
     if ($rowCount = $pdo->exec($query)) {
-        $confirm = 'La facture a été modifiée avec succès !';
+        $confirm = 'La facture a été supprimé avec succès !';
     } else {
         $confirm = 'Il y a une erreur dans le formulaire !';
     };
