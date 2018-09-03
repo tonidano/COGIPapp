@@ -1,9 +1,11 @@
 <?php
 try {
-    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '12345678');
+    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
+
     if (!isset($_POST['button'])) {
         $id = $_GET['id'];
         $resultat = $bd->query("SELECT * FROM facture WHERE idfacture = $id");
+
         $donnees = $resultat->fetch();
     } else {
         $tab = array(
