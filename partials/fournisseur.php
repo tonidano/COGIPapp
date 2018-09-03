@@ -1,7 +1,7 @@
 <?php
 try {
     // On se connecte à MySQL
-    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
+    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '12345678');
 
     $resultat = $bd->query('SELECT * FROM societes WHERE type_idtype=2');
     // $donnees = $resultat->fetch();

@@ -1,11 +1,11 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8','root','');
+    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8','root','12345678');
     $id=$_GET['id'];
     $reponse =  $bdd->query
     ("SELECT nom_societe, adresse, telephone_societe, num_tva, motif_prestation, nom
-      FROM facture 
-      JOIN societes 
+      FROM facture
+      JOIN societes
       ON facture.societes_idsocietes = societes.idsocietes
       JOIN annuaire ON facture.annuaire_idannuaire = annuaire.idannuaire
 
@@ -54,7 +54,7 @@ try {
                     <td><?= $donnees['num_tva']  ?></td>
                     <td><?= $donnees['type']  ?></td>
 
-     
+
                 </tr>
             </table> -->
     </body>
