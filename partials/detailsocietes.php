@@ -1,9 +1,8 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8','root','12345678');
+    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
     $id=$_GET['id'];
-    $reponse =  $bdd->query
-    ("SELECT nom_societe, adresse, telephone_societe, num_tva, motif_prestation, nom
+    $reponse =  $bdd->query("SELECT nom_societe, adresse, telephone_societe, num_tva, motif_prestation, nom
       FROM facture
       JOIN societes
       ON facture.societes_idsocietes = societes.idsocietes
@@ -12,10 +11,10 @@ try {
 
       WHERE idsocietes = $id");
 
-      $donnees = $reponse->fetch();
-      } catch (Exception $e) {
-          die('Erreur : '.$e->getMessage());
-      }
+    $donnees = $reponse->fetch();
+} catch (Exception $e) {
+    die('Erreur : '.$e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>

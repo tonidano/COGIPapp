@@ -1,5 +1,3 @@
-
-
 <?php
 try {
     $strConnection = 'mysql:host=localhost;dbname=gocip'; //Ligne 1
@@ -11,7 +9,7 @@ try {
     $query = "DELETE FROM facture WHERE idfacture= $id";
 
     if ($rowCount = $pdo->exec($query)) {
-        $confirm = 'La facture a été supprimé avec succès !';
+        $confirm = 'La facture a été supprimée avec succès !';
     } else {
         $confirm = 'Il y a une erreur dans le formulaire !';
     };

@@ -1,12 +1,10 @@
 <?php
 
     try {
-        $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '12345678');
+        $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
 
         $resultat = $bd->query('SELECT * FROM annuaire');
         $donnees='';
-
-
     } catch (Exception $e) {
         die('Erreur : '.$e->getMessage());
     }

@@ -1,13 +1,13 @@
 <?php
 try {
     // On se connecte à MySQL
-    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '12345678');
+    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
 
     $resultat = $bd->query('SELECT * FROM societes ORDER BY nom_societe ASC');
     // $donnees = $resultat->fetch();
     $donnees='';
 } catch (Exception $e) {
-     // En cas d'erreur, on affiche un message et on arrête tout
+    // En cas d'erreur, on affiche un message et on arrête tout
     die('Erreur : '.$e->getMessage());
 }
 // $reponse->closeCursor();

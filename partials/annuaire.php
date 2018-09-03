@@ -1,6 +1,6 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '12345678');
+    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
     $reponse =  $bdd->query('SELECT * FROM annuaire ORDER BY nom ASC LIMIT 10');
     $donnees = $reponse->fetch();
 } catch (Exception $e) {

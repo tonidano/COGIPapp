@@ -1,7 +1,7 @@
 <?php
 try {
     // On se connecte à MySQL
-    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '12345678');
+    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
     $id = $_GET['id'];
     $resultat = $bd->query("SELECT * FROM facture
       JOIN annuaire ON facture.annuaire_idannuaire = annuaire.idannuaire
