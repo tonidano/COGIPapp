@@ -1,7 +1,7 @@
 <?php
 try {
     // On se connecte à MySQL
-    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
+    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '12345678');
 
     $resultat = $bd->query('SELECT * FROM facture ORDER BY date_facture DESC');
     // $donnees = $resultat->fetch();
@@ -41,7 +41,7 @@ try {
             <td> <a href="./detailfacture.php?id=<?= $donnees['idfacture']; ?>" ><?= $donnees['numero']; ?></a></td>
             <td><?= $donnees['date_facture']; ?></td>
             <td><?= $donnees['motif_prestation']; ?></td>
-          
+
 
 
 
