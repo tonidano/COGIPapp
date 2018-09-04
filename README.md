@@ -14,18 +14,10 @@ https://github.com/becodeorg/Johnson2/blob/master/projets/COGIPapp/readme.md#les
 
 ## Team
 
-* [**Lamri Mery**](https://github.com/Lamri-Mery)
 * [**Antoni Dalle Nogare**](https://github.com/tonidano)
 * [**Guillaume Kreit**](https://github.com/Guillaume-Kreit)
+* [**Lamri Mery**](https://github.com/Lamri-Mery)
 
-## Objectif 
-
-* Créer et gérer une base de données
-* Crypter le mot de passe dans la base de données (il ne doit pas apparaître en clair)
-* Utiliser la structure MVC pour ranger vos fichiers et vos fonctionnalités
-* Utiliser un routeur
-* Savoir mettre en place une session
-* Permettre ou non l'accès à certaines pages en fonction des permissions de session
 
 ## Durée de dévellopement
 
@@ -51,4 +43,14 @@ https://github.com/tonidano/COGIPapp/projects/1
 
 ## Lien du site
 
+* nom : JC
+* mot de passe : ranu
+
 Voici le [lien](https://gocipapp.000webhostapp.com/GOCIPapp/partials/login.php) 
+
+
+## Objectifs en cours de développement
+
+* Utiliser la structure MVC pour ranger vos fichiers et vos fonctionnalités
+* Utiliser un routeur
+* Permettre ou non l'accès à certaines pages en fonction des permissions de session
