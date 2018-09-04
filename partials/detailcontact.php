@@ -1,6 +1,6 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=id7012993_gocip;charset=utf8', 'id7012993_antoni', 'gocip');
     $id=$_GET['id'];
     $reponse =  $bdd->query("SELECT *
       -- FROM annuaire_has_societes

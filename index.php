@@ -1,8 +1,7 @@
-
 <?php
 try {
     // On se connecte à MySQL
-    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
+    $bd = new PDO('mysql:host=localhost;dbname=id7012993_gocip;charset=utf8', 'id7012993_antoni', 'gocip');
     $resultat1 = $bd->query('SELECT *
         FROM facture
         JOIN societes ON facture.societes_idsocietes = societes.idsocietes
@@ -72,6 +71,8 @@ try {
   </head>
 
 <body>
+
+    <?php include "./partials/check_login.php" ?>
   <p><a href="./partials/fournisseur.php">Fournisseurs</a></p>
   <p><a href="./partials/client.php">Clients</a></p>
 
@@ -137,12 +138,12 @@ try {
             <td><?= $donnees3['telephone_societe']; ?></td>
             <td><?= $donnees3['type']; ?></td>
 
-            <td> <button type="submit" name="supprimer" onclick="deleteligne(<?= $donnees1['idfacture']; ?>)" ><i class="fas fa-trash-alt"></i></button> </td>
+            <td> <button type="submit" name="supprimer" onclick="deletesociete(<?= $donnees3['idsocietes']; ?>)" ><i class="fas fa-trash-alt"></i></button> </td>
           </tr>
       <?php
  } ?>
     </table>
-    <input type="submit" name="ajouter" value="Ajouter" onclick="ajouterligne()">
+    <input type="submit" name="ajouter" value="Ajouter" onclick="ajoutersociete()">
 
     <script>
     function deletefacture(id){
@@ -166,9 +167,20 @@ try {
     document.location.href = "./partials/ajoutannuaire.php?id=" + id;
     }
 
+    function deletesociete(id){
+
+    document.location.href = "./partials/deletesociete.php?id=" + id;
+    }
+
+    function ajoutersociete(id){
+
+    document.location.href = "./partials/ajoutsociete.php?id=" + id;
+    }
+
 
 
     </script>
+
   </body>
 
 </html>

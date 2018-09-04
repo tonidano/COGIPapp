@@ -6,34 +6,33 @@
         die('Erreur : '.$e->getMessage());
     }
     $id=$_GET['id'];
-        $sql1 = "DELETE FROM annuaire_has_societes WHERE annuaire_idannuaire= $id";
-        $sql2 = "DELETE FROM annuaire WHERE idannuaire= $id" ;
 
+        $sql = "DELETE FROM societes WHERE idsocietes= $id" ;
 
+        $bd->exec($sql);
 
-        $bd->exec($sql1);
-        $bd->exec($sql2);
         $tab = array(
-      ':annuaire_idannuaire'=> $id
+      ':idsocietes'=> $id
 
       );
 
 
-        $req = $bd->prepare($sql1);
-        $req = $bd->prepare($sql2);
+        $req = $bd->prepare($sql);
 
         if ($req->execute($tab)) {
-            $confirm = 'Le client a été supprimé avec succès !';
+            $confirm = 'La société a été supprimée avec succès !';
         } else {
             $confirm = 'Il y a une erreur dans le formulaire !';
         }
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>suppression client</title>
+    <title>suppression société</title>
   </head>
   <body>
     <?= $confirm ?>

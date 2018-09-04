@@ -1,6 +1,6 @@
 <?php
 try {
-    $bd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '');
+    $bd = new PDO('mysql:host=localhost;dbname=id7012993_gocip;charset=utf8', 'id7012993_antoni', 'gocip');
     if (!isset($_POST['button'])) {
         $id = $_GET['id'];
         $resultat = $bd->query("SELECT * FROM annuaire WHERE idannuaire = $id");
