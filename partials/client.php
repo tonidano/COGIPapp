@@ -22,11 +22,11 @@ try {
   <head>
     <meta charset="utf-8">
     <title>Clients</title>
-
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   </head>
 <body>
 
-    <h1>Clients</h1>
+    <h2>Clients</h2>
     <table>
 
           <th>Nom de la société</th>

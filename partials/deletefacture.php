@@ -32,7 +32,8 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>suppression facture</title>
+      <title>suppression facture</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   </head>
   <body>
     <?= $confirm ?>

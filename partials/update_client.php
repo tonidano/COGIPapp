@@ -32,13 +32,15 @@ try {
     <head>
       	<meta charset="utf-8">
       	<title>Modifier le client</title>
+        <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     </head>
 <body>
+    <div class="container-fluid">
   	<a href="../index.php">Accueil</a>
         <?php if (!isset($_POST['button'])) {
     ?>
-	  <h1>Modifier</h1>
-        <form action="update_client.php" method="post">
+	  <h2>Modifier</h2>
+        <form action="update_client.php" method="post" id="forme">
         		<div>
         		    <label for="nom">Nom</label>
         			  <input type="text" name="nom" value="<?= $donnees['nom']?>">
@@ -62,6 +64,7 @@ try {
         		<input type="hidden" name="idannuaire" value="<?= $id; ?>">
         		<button type="submit" name="button">Modifier</button>
         </form>
+      </div>
 <?php
 } else {
         echo $confirm;
