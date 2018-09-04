@@ -4,6 +4,12 @@
 
 ## COGIP-app.
 
+## Team
+
+* Lamri Mery
+* Antoni Dalle Nogare
+* Guillaume Kreit
+
 ## Objectif 
 
 * 
