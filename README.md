@@ -14,9 +14,9 @@ https://github.com/becodeorg/Johnson2/blob/master/projets/COGIPapp/readme.md#les
 
 ## Team
 
-* [**Lamri Mery**](https://github.com/Lamri-Mery)
 * [**Antoni Dalle Nogare**](https://github.com/tonidano)
 * [**Guillaume Kreit**](https://github.com/Guillaume-Kreit)
+* [**Lamri Mery**](https://github.com/Lamri-Mery)
 
 ## Objectif 
 
