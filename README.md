@@ -26,6 +26,11 @@ https://github.com/becodeorg/Johnson2/blob/master/projets/COGIPapp/readme.md#les
 * 
 * 
 * 
+
+## Durée de dévellopement
+
+Du mardi 28/08 à 9:00 au mardi 04/09 à 17:00
+
 ## Khaban
 
 https://github.com/tonidano/COGIPapp/projects/1
