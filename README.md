@@ -18,14 +18,6 @@ https://github.com/becodeorg/Johnson2/blob/master/projets/COGIPapp/readme.md#les
 * [**Guillaume Kreit**](https://github.com/Guillaume-Kreit)
 * [**Lamri Mery**](https://github.com/Lamri-Mery)
 
-## Objectif 
-
-* Créer et gérer une base de données
-* Crypter le mot de passe dans la base de données (il ne doit pas apparaître en clair)
-* Utiliser la structure MVC pour ranger vos fichiers et vos fonctionnalités
-* Utiliser un routeur
-* Savoir mettre en place une session
-* Permettre ou non l'accès à certaines pages en fonction des permissions de session
 
 ## Durée de dévellopement
 
