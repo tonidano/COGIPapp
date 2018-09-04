@@ -18,9 +18,9 @@
 
         $tab = array(
 
-    ':nom_societe'=> $_POST['nom_societe'],
-    ':adresse' => $_POST['adresse'],
-    ':pays'  => $_POST['pays'],
+    ':nom_societe'=> $_POST['nom_societe'] = filter_var($_POST['nom_societe'], FILTER_SANITIZE_STRING),
+    ':adresse' => $_POST['adresse'] = filter_var($_POST['adresse'], FILTER_SANITIZE_STRING),
+    ':pays'  => $_POST['pays'] = filter_var($_POST['pays'], FILTER_SANITIZE_STRING),
     ':telephone_societe'  => $_POST['telephone_societe'],
     ':num_tva'  => $_POST['num_tva'],
     ':type_idtype'  => $_POST['type_idtype']

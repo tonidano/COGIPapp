@@ -24,7 +24,7 @@
 
     ':numero'=> $_POST['numero'],
     ':date_facture' => $_POST['date_facture'],
-    ':motif_prestation'  => $_POST['motif_prestation'],
+    ':motif_prestation'  => $_POST['motif_prestation'] = filter_var($_POST['motif_prestation'], FILTER_SANITIZE_STRING),
     ':societes_idsocietes' => $_POST['societes_idsocietes'],
     ':annuaire_idannuaire'  => $_POST['annuaire_idannuaire']
     );
@@ -38,6 +38,7 @@
             $confirm = 'Il y a une erreur dans le formulaire !';
         }
     }
+
 ?>
 
 
