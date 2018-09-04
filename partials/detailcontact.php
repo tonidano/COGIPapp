@@ -28,6 +28,7 @@ try {
         <link href="../assets/css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <title>detail_contact</title>
+        <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     </head>
     <body>
         <h1>Coucou</h1>

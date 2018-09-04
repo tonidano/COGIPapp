@@ -7,7 +7,7 @@ try {
     // $donnees = $resultat->fetch();
     $donnees='';
 } catch (Exception $e) {
-     // En cas d'erreur, on affiche un message et on arrête tout
+    // En cas d'erreur, on affiche un message et on arrête tout
     die('Erreur : '.$e->getMessage());
 }
 // $reponse->closeCursor();
@@ -22,11 +22,11 @@ try {
   <head>
     <meta charset="utf-8">
     <title>Société</title>
-
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   </head>
 <body>
-
-    <h1>Sociétés</h1>
+    <div class="container-fluid">
+    <h2>Sociétés</h2>
     <table>
 
           <th>Nom de la société</th>
@@ -51,5 +51,6 @@ try {
 
 
     </table>
+  </div>
   </body>
 </html>

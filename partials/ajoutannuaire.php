@@ -5,8 +5,6 @@
 
         $resultat = $bd->query('SELECT * FROM annuaire');
         $donnees='';
-
-
     } catch (Exception $e) {
         die('Erreur : '.$e->getMessage());
     }
@@ -19,12 +17,11 @@
 
         $tab = array(
 
-    ':nom'=> $_POST['nom'],
-    ':prenom' => $_POST['prenom'],
+    ':nom'=> $_POST['nom'] = filter_var($_POST['motif_prestation'], FILTER_SANITIZE_STRING),
+    ':prenom' => $_POST['prenom'] = filter_var($_POST['motif_prestation'], FILTER_SANITIZE_STRING),
     ':telephone'  => $_POST['telephone'],
-    ':email'  => $_POST['email']
+    ':email'  => $_POST['email'] = filter_var($_POST['motif_prestation'], FILTER_SANITIZE_EMAIL)
     );
-
 
         $req = $bd->prepare($sql);
 
@@ -36,20 +33,21 @@
     }
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>ajout</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   </head>
 <body>
+    <div class="container-fluid">
+
   	<a href="../index.php">Accueil</a>
   <?php if (!isset($_POST['ajouter'])) {
     ?>
-  <h1>Ajouter</h1>
+  <h2>Ajouter</h2>
+
   <form action="ajoutannuaire.php" method="post">
     <div>
  			<label for="nom">Nom</label>
@@ -72,6 +70,9 @@
 
     <button type="submit" name="ajouter">Ajouter</button>
   </form>
+
+</div>
+
   <?php
 } else {
         echo $confirm;

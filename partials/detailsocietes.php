@@ -1,9 +1,8 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8','root','12345678');
+    $bdd = new PDO('mysql:host=localhost;dbname=gocip;charset=utf8', 'root', '12345678');
     $id=$_GET['id'];
-    $reponse =  $bdd->query
-    ("SELECT nom_societe, adresse, telephone_societe, num_tva, motif_prestation, nom
+    $reponse =  $bdd->query("SELECT nom_societe, adresse, telephone_societe, num_tva, motif_prestation, nom
       FROM facture
       JOIN societes
       ON facture.societes_idsocietes = societes.idsocietes
@@ -12,10 +11,10 @@ try {
 
       WHERE idsocietes = $id");
 
-      $donnees = $reponse->fetch();
-      } catch (Exception $e) {
-          die('Erreur : '.$e->getMessage());
-      }
+    $donnees = $reponse->fetch();
+} catch (Exception $e) {
+    die('Erreur : '.$e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +23,7 @@ try {
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <title>details société</title>
+        <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     </head>
     <body>
       <!-- <h1>Nom de société: </h1> -->

@@ -34,14 +34,15 @@ try {
 <head>
 	<meta charset="utf-8">
 	<title>Modifier la société</title>
-
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 <body>
+  <div class="container-fluid">
 	<a href="../index.php">Accueil</a>
   <?php if (!isset($_POST['button'])) {
      ?>
-	<h1>Modifier</h1>
-	<form action="updatesociete.php" method="post">
+	<h2>Modifier</h2>
+	<form action="updatesociete.php" method="post" id="forme">
 		<div>
 			<label for="nom_societe">Nom</label>
 			<input type="text" name="nom_societe" value="<?= $donnees['nom_societe']?>">
@@ -67,6 +68,7 @@ try {
 		<input type="hidden" name="idsocietes" value="<?= $id; ?>">
 		<button type="submit" name="button">Modifier</button>
 	</form>
+</div>
 <?php
  } else {
      echo $confirm;

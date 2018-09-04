@@ -24,7 +24,7 @@
 
     ':numero'=> $_POST['numero'],
     ':date_facture' => $_POST['date_facture'],
-    ':motif_prestation'  => $_POST['motif_prestation'],
+    ':motif_prestation'  => $_POST['motif_prestation'] = filter_var($_POST['motif_prestation'], FILTER_SANITIZE_STRING),
     ':societes_idsocietes' => $_POST['societes_idsocietes'],
     ':annuaire_idannuaire'  => $_POST['annuaire_idannuaire']
     );
@@ -38,6 +38,7 @@
             $confirm = 'Il y a une erreur dans le formulaire !';
         }
     }
+
 ?>
 
 
@@ -48,12 +49,15 @@
   <head>
     <meta charset="utf-8">
     <title>ajout</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   </head>
 <body>
+    <div class="container-fluid">
   	<a href="../index.php">Accueil</a>
   <?php if (!isset($_POST['ajouter'])) {
     ?>
-  <h1>Ajouter</h1>
+  <h2>Ajouter</h2>
+  <div class="col-lg-6 col-lg-offset-3">
   <form action="ajoutfacture.php" method="post">
     <div>
  			<label for="numero">Numéro</label>
@@ -90,6 +94,8 @@
     </div>
     <button type="submit" name="ajouter">Ajouter</button>
   </form>
+</div>
+</div>
   <?php
 } else {
         echo $confirm;

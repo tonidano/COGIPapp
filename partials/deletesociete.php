@@ -1,9 +1,4 @@
 <?php
-try {
-    $strConnection = 'mysql:host=localhost;dbname=gocip'; //Ligne 1
-    $arrExtraParam= array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-    $pdo = new PDO($strConnection, 'root', '12345678', $arrExtraParam); // Instancie la connexion
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //Ligne 4
 
     try {
         $bd = new PDO('mysql:host=localhost;dbname=id7012993_gocip;charset=utf8', 'id7012993_antoni', 'gocip');
@@ -12,12 +7,12 @@ try {
     }
     $id=$_GET['id'];
 
-        $sql = "DELETE FROM facture WHERE idfacture= $id" ;
+        $sql = "DELETE FROM societes WHERE idsocietes= $id" ;
 
         $bd->exec($sql);
 
         $tab = array(
-      ':idfacture'=> $id
+      ':idsocietes'=> $id
 
       );
 
@@ -25,7 +20,7 @@ try {
         $req = $bd->prepare($sql);
 
         if ($req->execute($tab)) {
-            $confirm = 'La facture a été supprimée avec succès !';
+            $confirm = 'La société a été supprimée avec succès !';
         } else {
             $confirm = 'Il y a une erreur dans le formulaire !';
         }
@@ -37,8 +32,7 @@ try {
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>delete_facture</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <title>suppression société</title>
   </head>
   <body>
     <?= $confirm ?>
