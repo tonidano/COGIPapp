@@ -43,7 +43,7 @@ https://github.com/tonidano/COGIPapp/projects/1
 
 ## Lien du site
 
-nom : JC
-mot de passe : ranu
+*nom : JC
+*mot de passe : ranu
 
 Voici le [lien](https://gocipapp.000webhostapp.com/GOCIPapp/partials/login.php) 
