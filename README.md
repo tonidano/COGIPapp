@@ -14,7 +14,7 @@ https://github.com/becodeorg/Johnson2/blob/master/projets/COGIPapp/readme.md#les
 
 * Lamri Mery
 * Antoni Dalle Nogare
-[**Guillaume**](https://github.com/Guillaume-Kreit)
+*[**Guillaume Kreit**](https://github.com/Guillaume-Kreit)
 
 ## Objectif 
 
