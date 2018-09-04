@@ -4,6 +4,8 @@
 
 ## Bienvenue sur COGIP-app. !
 
+![alt text](gestion.png)
+
 ## Lien des consignes
 
 https://github.com/becodeorg/Johnson2/blob/master/projets/COGIPapp/readme.md#les-donn%C3%A9es-dont-jean-christian-a-besoin
@@ -24,7 +26,7 @@ https://github.com/becodeorg/Johnson2/blob/master/projets/COGIPapp/readme.md#les
 * 
 ## Khaban
 
-* https://github.com/tonidano/COGIPapp/projects/1
+https://github.com/tonidano/COGIPapp/projects/1
 
 ## Outils 
 
