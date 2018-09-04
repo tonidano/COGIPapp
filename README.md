@@ -51,7 +51,6 @@ Voici le [lien](https://gocipapp.000webhostapp.com/GOCIPapp/partials/login.php)
 
 ## Objectifs en cours de développement
 
-* sanitization pour éviter les injections SQL
 * Utiliser la structure MVC pour ranger vos fichiers et vos fonctionnalités
 * Utiliser un routeur
 * Permettre ou non l'accès à certaines pages en fonction des permissions de session
