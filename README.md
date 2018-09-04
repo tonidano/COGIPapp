@@ -2,7 +2,11 @@
 
 # COGIPapp
 
-## COGIP-app.
+## Bienvenue sur COGIP-app. !
+
+## Lien des consignes
+
+https://github.com/becodeorg/Johnson2/blob/master/projets/COGIPapp/readme.md#les-donn%C3%A9es-dont-jean-christian-a-besoin
 
 ## Team
 
