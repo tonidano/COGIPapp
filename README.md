@@ -4,7 +4,7 @@
 
 ## Bienvenue sur COGIP-app. !
 
-![alt text](gestion.png)
+![alt text](https://contattafiles.s3.us-west-1.amazonaws.com/tnt14094/6ObZbAEUvbmerta/gestion.png)
 
 ## Lien des consignes
 
