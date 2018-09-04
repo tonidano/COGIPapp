@@ -4,6 +4,8 @@
 
 ## Bienvenue sur COGIP-app. !
 
+COGIPapp est une application qui permet de gérer des bases de donnée sans devoir jongler avec des logiciels de comptables et autres fichiers excel.
+
 ![alt text](https://contattafiles.s3.us-west-1.amazonaws.com/tnt14094/6ObZbAEUvbmerta/gestion.png)
 
 ## Lien des consignes
