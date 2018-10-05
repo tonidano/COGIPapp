@@ -39,7 +39,7 @@ if (isset($_POST['connexion'])) {
             $_SESSION['pwd'] = $pwd;
 
             // on redirige notre visiteur vers une page de notre section membre
-            header('location: index.php');
+            header('location: ../index.php');
         } else {
 
             //Le visiteur n'a pas été reconnu comme étant membre de notre site. On utilise alors un petit javascript lui signalant ce fait

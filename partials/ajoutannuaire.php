@@ -17,10 +17,10 @@
 
         $tab = array(
 
-    ':nom'=> $_POST['nom'] = filter_var($_POST['motif_prestation'], FILTER_SANITIZE_STRING),
-    ':prenom' => $_POST['prenom'] = filter_var($_POST['motif_prestation'], FILTER_SANITIZE_STRING),
+    ':nom'=> $_POST['nom'] = filter_var($_POST['nom'], FILTER_SANITIZE_STRING),
+    ':prenom' => $_POST['prenom'] = filter_var($_POST['prenom'], FILTER_SANITIZE_STRING),
     ':telephone'  => $_POST['telephone'],
-    ':email'  => $_POST['email'] = filter_var($_POST['motif_prestation'], FILTER_SANITIZE_EMAIL)
+    ':email'  => $_POST['email'] = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)
     );
 
         $req = $bd->prepare($sql);

@@ -1,7 +1,7 @@
 <?php
 try {
     // On se connecte à MySQL
-    $bd = new PDO('mysql:host=localhost;dbname=id7012993_gocip;charset=utf8', 'root', '12345678');
+    $bd = new PDO('mysql:host=localhost;dbname=id7012993_gocip;charset=utf8', 'id7012993_antoni', 'gocip');
     $resultat1 = $bd->query('SELECT *
         FROM facture
         JOIN societes ON facture.societes_idsocietes = societes.idsocietes
@@ -9,16 +9,21 @@ try {
     $resultat2 = $bd->query('SELECT *
         FROM annuaire
         JOIN societes ON annuaire.idannuaire = societes.idsocietes
+        -- LEFT JOIN societes ON annuaire_has_societes.societes_idsocietes = societes.idsocietes
+        -- LEFT JOIN annuaire ON annuaire.idannuaire = annuaire_has_societes.annuaire_idannuaire
         ORDER BY idannuaire DESC LIMIT 0,5');
     $resultat3 = $bd->query('SELECT *
         FROM societes JOIN type ON societes.type_idtype = type.idtype
         ORDER BY idsocietes DESC LIMIT 0,5');
+    // $donnees = $resultat->fetch();
     $donnees1='';
     $donnees2='';
     $donnees3='';
 } catch (Exception $e) {
+    // En cas d'erreur, on affiche un message et on arrête tout
     die('Erreur : '.$e->getMessage());
 }
+    // $reponse->closeCursor();
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +48,6 @@ try {
 
      <h2>Factures</h2>
 
-
         <div class="col-lg-10 col-lg-offset-1">
             <table class="table">
 
@@ -51,7 +55,7 @@ try {
                        <th>Date</th>
                        <th>Société</th>
                      <?php while ($donnees1= $resultat1 ->fetch()) {
-                  ?>
+    ?>
 
                  <tr>
                    <td><a href="./partials/updatefacture.php?id=<?= $donnees1['idfacture']; ?>"><?= $donnees1['numero']; ?></a></td>
@@ -60,13 +64,10 @@ try {
                    <td> <button type="submit" name="supprimer" onclick="deletefacture(<?= $donnees1['idfacture']; ?>)" ><i class="fas fa-trash-alt"></i></button> </td>
                  </tr>
                    <?php
-
-                 } ?>
+} ?>
             </table>
             <input type="submit" name="ajouter" value="Ajouter" onclick="ajouterfacture()">
         </div>
-
-
 
      <h2 id="personnes">Personnes</h2>
 
@@ -80,7 +81,7 @@ try {
                <th>Email</th>
                <th>Société</th>
              <?php while ($donnees2= $resultat2 ->fetch()) {
-          ?>
+        ?>
 
              <tr>
                <td><a href="./partials/update_client.php?id=<?= $donnees2['idannuaire']; ?>"><?= $donnees2['nom']; ?></a></td>
@@ -91,7 +92,7 @@ try {
                <td> <button type="submit" name="supprimer" onclick="deleteannuaire(<?= $donnees2['idannuaire']; ?>)" ><i class="fas fa-trash-alt"></i></button> </td>
              </tr>
          <?php
-       } ?>
+    } ?>
             </table>
             <input type="submit" name="ajouter" value="Ajouter" onclick="ajouterannuaire()">
         </div>
@@ -108,32 +109,22 @@ try {
            <th>Téléphone</th>
            <th>Type</th>
          <?php while ($donnees3= $resultat3 ->fetch()) {
-      ?>
+        ?>
            <tr>
              <td><a href="./partials/updatesociete.php?id=<?= $donnees3['idsocietes']; ?>"><?= $donnees3['nom_societe']; ?></a></td>
              <td><?= $donnees3['telephone_societe']; ?></td>
              <td><?= $donnees3['type']; ?></td>
 
-             <td> <button type="submit" name="supprimer" onclick="deleteligne(<?= $donnees1['idfacture']; ?>)" ><i class="fas fa-trash-alt"></i></button> </td>
+             <td> <button type="submit" name="supprimer" onclick="deletesociete(<?= $donnees3['idsocietes']; ?>)" ><i class="fas fa-trash-alt"></i></button> </td>
            </tr>
        <?php
-
-     } ?>
+    } ?>
      </table>
-     <input type="submit" name="ajouter" value="Ajouter" onclick="ajouterligne()">
+     <input type="submit" name="ajouter" value="Ajouter" onclick="ajoutersociete()">
    </div>
 
  </div>
 
-    function deletesociete(id){
-
-    document.location.href = "./partials/deletesociete.php?id=" + id;
-    }
-
-    function ajoutersociete(id){
-
-    document.location.href = "./partials/ajoutsociete.php?id=" + id;
-    }
 
 
 
@@ -149,6 +140,16 @@ try {
      }
      function ajouterannuaire(id){
      document.location.href = "./partials/ajoutannuaire.php?id=" + id;
+     }
+
+     function deletesociete(id){
+
+     document.location.href = "./partials/deletesociete.php?id=" + id;
+     }
+
+     function ajoutersociete(id){
+
+     document.location.href = "./partials/ajoutsociete.php?id=" + id;
      }
      </script>
 

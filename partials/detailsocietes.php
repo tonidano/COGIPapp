@@ -37,7 +37,7 @@ try {
       <p><?= $donnees['motif_prestation']  ?></p>
       <!-- <p>Type de clients: </p> -->
       <p><?= $donnees['nom']  ?></p>
-            <!-- <table>
+            <table>
                 <tr>
                     <th>Nom de société </th>
                     <th>Adresse </th>
@@ -56,6 +56,6 @@ try {
 
 
                 </tr>
-            </table> -->
+            </table>
     </body>
 </html>
